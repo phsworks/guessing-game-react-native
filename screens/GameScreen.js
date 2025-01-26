@@ -91,15 +91,15 @@ function GameScreen({ userNumber, onGameOver }) {
       </Card>
       <View style={styles.listContainer}>
         <FlatList
-          keyExtractor={(item) => item}
           data={guessRounds}
           renderItem={(itemData) => (
             <GuessLogItem
-              roundNumber={guesRoundsListLength - itemData.index}
-              guess={itemData.item}
+            roundNumber={guesRoundsListLength - itemData.index}
+            guess={itemData.item}
             />
 
           )}
+          keyExtractor={(ite, index) => index.toString()}
         ></FlatList>
       </View>
     </View>
