@@ -4,7 +4,7 @@ import Colors from '../../constants/Colors';
 function Instruction( {children, style}) {
   return (
     <View style={styles.instructionText}>
-      <Text style={[styles.instructionText, style]}>{children}</Text>
+      <Text style={[styles.instructionText, style]}> {children}</Text>
     </View>
   );
 }
