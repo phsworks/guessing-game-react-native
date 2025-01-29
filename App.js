@@ -10,6 +10,7 @@ import { useFonts } from "expo-font";
 import regular from "./assets/fonts/OpenSans-Regular.ttf";
 import bold from "./assets/fonts/OpenSans-Bold.ttf";
 import AppLoading from "expo-app-loading";
+import { StatusBar } from "expo-status-bar";
 
 export default function App() {
   const [userNumber, setUserNumber] = useState();
@@ -34,7 +35,7 @@ export default function App() {
     setGameIsOver(true);
     setGuessRounds(numberOfRounds);
   }
-  
+
   function startNewGameHandler() {
     setUserNumber(null);
     setGuessRounds(0);
@@ -59,19 +60,22 @@ export default function App() {
   }
 
   return (
-    <LinearGradient
-      colors={[Colors.primary700, Colors.accent500]}
-      style={styles.rootScreen}
-    >
-      <ImageBackground
-        source={background}
-        resizeMode="cover"
+    <>
+    <StatusBar style="light" />
+      <LinearGradient
+        colors={[Colors.primary700, Colors.accent500]}
         style={styles.rootScreen}
-        imageStyle={styles.backgroundImage}
       >
-        <SafeAreaView style={styles.rootScreen}>{screen}</SafeAreaView>
-      </ImageBackground>
-    </LinearGradient>
+        <ImageBackground
+          source={background}
+          resizeMode="cover"
+          style={styles.rootScreen}
+          imageStyle={styles.backgroundImage}
+        >
+          <SafeAreaView style={styles.rootScreen}>{screen}</SafeAreaView>
+        </ImageBackground>
+      </LinearGradient>
+    </>
   );
 }
 
